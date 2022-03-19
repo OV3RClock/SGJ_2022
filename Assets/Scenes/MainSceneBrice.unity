@@ -841,6 +841,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2093936797}
     m_Modifications:
+    - target: {fileID: 3108060129921307385, guid: 4ee3e1e5b53a5874097ba23a1134ad26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3108060131790122268, guid: 4ee3e1e5b53a5874097ba23a1134ad26, type: 3}
       propertyPath: m_Name
       value: AbilityButton

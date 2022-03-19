@@ -1114,9 +1114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartTimeBetweenSpawns: 0.05
-  Bubble: {fileID: 0}
-  BubbleSpawnPoint: {fileID: 0}
-  Player: {fileID: 0}
+  Bubble: {fileID: 4550517479879337608, guid: a852a0b1c656ed343990433975ebef80, type: 3}
+  BubbleSpawnPoint: {fileID: 506792439}
+  Player: {fileID: 506792440}
 --- !u!1 &985648459
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ namespace Managers
     public class AbilitiesManager : MonoBehaviour
     {
         public static AbilitiesManager instance;
+        
+        private HashSet<EAbilities> unlockedAbilities = new HashSet<EAbilities>();
         private List<EAbilities> activeAbilities = new List<EAbilities>();
         [SerializeField] private int nbMaxAbilities = 3;
         
@@ -45,6 +47,17 @@ namespace Managers
         {
             return (activeAbilities.Contains(ability));
         }
+
+        public void UnlockAbility(EAbilities ability)
+        {
+            unlockedAbilities.Add(ability);
+            abilitiesManagerEvent();
+        }
+
+        public bool IsAbilityUnlocked(EAbilities ability)
+        {
+            return (unlockedAbilities.Contains(ability));
+        }
         
     }
     
@@ -53,6 +66,7 @@ namespace Managers
         RED,
         NIGHT_VISION,
         CONTRAST,
-        BLUR
+        BLUR,
+        MOVEMENT
     }
 }

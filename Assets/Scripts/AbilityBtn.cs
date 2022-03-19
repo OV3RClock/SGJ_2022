@@ -1,4 +1,3 @@
-using System;
 using Managers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,15 +8,9 @@ public class AbilityBtn : MonoBehaviour
     [SerializeField] private KeyCode key;
 
     [SerializeField] private Image image;
-    private bool unlocked = false;
 
 
-    private void Start()
-    {
-        SetUnlocked(AbilitiesManager.instance.IsAbilityUnlocked(abilityId));
-    }
-
-    private void OnEnable()
+    private void Awake()
     {
         AbilitiesManager.abilitiesManagerEvent += notify;
     }
@@ -29,23 +22,15 @@ public class AbilityBtn : MonoBehaviour
 
     void Update()
     {
-        if (!unlocked) return;
-        
         if (Input.GetKeyDown(key))
         {
             AbilitiesManager.instance.ActivateAbility(abilityId);
         }
     }
 
-    private void SetUnlocked(bool unlocked)
+    public void notify()
     {
-        this.unlocked = unlocked;
-        image.enabled = unlocked;
-    }
-
-    private void SetEnabled(bool enabled)
-    {
-        if (enabled)
+        if (AbilitiesManager.instance.IsAbilityActive(abilityId))
         {
             image.color = Color.blue;
         }
@@ -53,10 +38,5 @@ public class AbilityBtn : MonoBehaviour
         {
             image.color = Color.white;
         }
-    }
-
-    public void notify()
-    {
-        SetEnabled(AbilitiesManager.instance.IsAbilityActive(abilityId));
     }
 }

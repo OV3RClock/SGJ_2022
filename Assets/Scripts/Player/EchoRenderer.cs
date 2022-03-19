@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EchoRenderer : MonoBehaviour
 {
-    public float TimeBetweenSpawns;
+    private float TimeBetweenSpawns;
     public float StartTimeBetweenSpawns;
 
     public GameObject bubble;
@@ -13,7 +13,8 @@ public class EchoRenderer : MonoBehaviour
     {
         if(TimeBetweenSpawns <= 0)
         {
-            Instantiate(bubble, transform.position, Quaternion.identity);
+            GameObject instance = Instantiate(bubble, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
             TimeBetweenSpawns = StartTimeBetweenSpawns;
         }
         else

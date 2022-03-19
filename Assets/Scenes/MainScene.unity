@@ -711,9 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988119bd9968e564598e01e5a919daed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetweenSpawns: 0
-  StartTimeBetweenSpawns: 0
-  bubble: {fileID: 0}
+  StartTimeBetweenSpawns: 0.05
+  bubble: {fileID: 4550517479879337608, guid: a852a0b1c656ed343990433975ebef80, type: 3}
 --- !u!1 &985648459
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +790,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7782805, y: 1}
+    m_SensorSize: {x: 1.7779922, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -832,7 +831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1999412664
 SpriteRenderer:
   m_ObjectHideFlags: 0

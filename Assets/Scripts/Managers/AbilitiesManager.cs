@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +17,9 @@ namespace Managers
 
         private void Awake()
         {
+            unlockedAbilities.Add(EAbilities.RED);
+            unlockedAbilities.Add(EAbilities.BLUR);
+            
             if (instance == null)
             {
                 DontDestroyOnLoad(gameObject);

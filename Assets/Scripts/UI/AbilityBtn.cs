@@ -15,6 +15,7 @@ public class AbilityBtn : MonoBehaviour
     private void Start()
     {
         SetUnlocked(AbilitiesManager.instance.IsAbilityUnlocked(abilityId));
+        image.color = Color.white / 2;
     }
 
     private void OnEnable()
@@ -47,11 +48,11 @@ public class AbilityBtn : MonoBehaviour
     {
         if (enabled)
         {
-            image.color = Color.blue;
+            image.color = Color.white;
         }
         else
         {
-            image.color = Color.white;
+            image.color = Color.white / 2;
         }
     }
 

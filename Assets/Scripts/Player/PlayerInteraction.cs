@@ -6,7 +6,7 @@ namespace Player
     public class PlayerInteraction : MonoBehaviour
     {
         [SerializeField] private TMPro.TMP_Text TMPtext;
-        [SerializeField] private float offset = 10;
+        [SerializeField] private float offset = 2;
         
         private ActionObject objectToInteractWith = null;
         private bool enabled = false;
@@ -21,7 +21,7 @@ namespace Player
         {
             if (!enabled) return;
             
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 if (objectToInteractWith != null)
                 {

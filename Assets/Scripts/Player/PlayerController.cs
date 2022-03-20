@@ -63,9 +63,9 @@ namespace Player
             }
         }
 
-        void Stop(bool stop)
+        public void Stop(bool stop)
         {
-            active = stop;
+            active = !stop;
         }
     }
 }

@@ -58,6 +58,10 @@ public class AbilityBtn : MonoBehaviour
 
     public void notify()
     {
+        if (AbilitiesManager.instance.IsAbilityUnlocked(abilityId))
+        {
+            SetUnlocked(true);
+        }
         SetEnabled(AbilitiesManager.instance.IsAbilityActive(abilityId));
     }
 }

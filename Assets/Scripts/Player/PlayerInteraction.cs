@@ -25,8 +25,8 @@ namespace Player
             {
                 if (objectToInteractWith != null)
                 {
-                    objectToInteractWith.PerformAction();
                     EnableInteractionText(false);
+                    objectToInteractWith.PerformAction();
                 }
             }
 

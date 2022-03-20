@@ -7,19 +7,21 @@ namespace Managers
     public class AbilitiesManager : MonoBehaviour
     {
         public static AbilitiesManager instance;
-        
+
         private HashSet<EAbilities> unlockedAbilities = new HashSet<EAbilities>();
         private List<EAbilities> activeAbilities = new List<EAbilities>();
         [SerializeField] private int nbMaxAbilities = 3;
-        
+
         public static Action abilitiesManagerEvent;
 
 
         private void Awake()
         {
+            /*
             unlockedAbilities.Add(EAbilities.RED);
             unlockedAbilities.Add(EAbilities.BLUR);
-            
+            */
+
             if (instance == null)
             {
                 DontDestroyOnLoad(gameObject);
@@ -53,16 +55,24 @@ namespace Managers
         public void UnlockAbility(EAbilities ability)
         {
             unlockedAbilities.Add(ability);
-            abilitiesManagerEvent();
+            try
+            {
+                abilitiesManagerEvent();
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         public bool IsAbilityUnlocked(EAbilities ability)
         {
             return (unlockedAbilities.Contains(ability));
         }
-        
+
     }
-    
+
     public enum EAbilities
     {
         RED,
@@ -70,6 +80,8 @@ namespace Managers
         CONTRAST,
         BLUR,
         MOVEMENT,
-        ANTICIPATION
+        ANTICIPATION, 
+        RESEAU1,
+        RESEAU2
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using Managers;
 using Player;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,7 +51,7 @@ public class AbilityBtn : MonoBehaviour
     public void OnClick()
     {
         if (!unlocked) return;
-            AbilitiesManager.instance.ActivateAbility(abilityId);
+        AbilitiesManager.instance.ActivateAbility(abilityId);
     }
 
     private void SetEnabled(bool enabled)

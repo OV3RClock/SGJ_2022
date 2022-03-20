@@ -7,11 +7,11 @@ public class RepareMachineBehaviour : ActionObject
     
     public override void PerformAction()
     {
-        //UIRepare.SetActive(true);
+        UIRepare.SetActive(true);
     }
 
     public override void CancelAction()
     {
-        //UIRepare.SetActive(false);
+        UIRepare.SetActive(false);
     }
 }

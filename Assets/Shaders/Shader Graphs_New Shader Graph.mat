@@ -51,7 +51,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _alpha: 16.99
+    - _alpha: 1.69
     m_Colors: []
   m_BuildTextureStacks: []
 --- !u!114 &8883090905273723672

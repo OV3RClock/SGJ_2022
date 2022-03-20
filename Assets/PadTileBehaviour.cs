@@ -9,6 +9,7 @@ namespace PadPuzzle
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Sprite circle;
         [SerializeField] private Sprite square;
+        [SerializeField] private Sprite circleBlur;
         
         public static Action onTileChangeEvent;
         
@@ -16,6 +17,11 @@ namespace PadPuzzle
         public Color color { get; set; }
         private int symbolID = 0;
 
+
+        private void Start()
+        {
+            notify();
+        }
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -45,16 +51,14 @@ namespace PadPuzzle
 
         public void notify()
         {
-            Sprite finalSprite = circle;
-            Color finalColor = new Color(255, 255, 255, 0);
+            Sprite finalSprite = circleBlur;
+            Color finalColor = Color.green;
 
             bool redActive = AbilitiesManager.instance.IsAbilityActive(EAbilities.RED);
             bool blurActive = AbilitiesManager.instance.IsAbilityActive(EAbilities.BLUR);
             
             if (blurActive)
             {
-                finalColor = Color.green;
-                
                 switch (symbol)
                 {
                     case PadPuzzleManager.ETileSymbol.CIRCLE:

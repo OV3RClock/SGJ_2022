@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
@@ -15,6 +16,7 @@ namespace PadPuzzle
 
         [SerializeField] private DoorBehaviour door;
         [SerializeField] private GameObject padPuzzleTiles;
+        [SerializeField] private GameObject padSolutionTiles;
         private PadTileBehaviour[] tiles;
         
         private List<Color> colors = new List<Color>();
@@ -32,7 +34,6 @@ namespace PadPuzzle
             {
                 ETileSymbol symbol = GetRandomSymbol();
                 tileSymbols.Add(color, symbol);
-                Debug.Log(color + " " + symbol);
             }
         }
 
@@ -42,6 +43,17 @@ namespace PadPuzzle
             for (int i = 0; i < colors.Count; ++i)
             {
                 tiles[i].color = colors[i];
+            }
+            
+            PadTileBehaviour[] solutionTiles = padSolutionTiles.GetComponentsInChildren<PadTileBehaviour>();
+            for (int i = 0; i < colors.Count; ++i)
+            {
+                solutionTiles[i].color = colors[i];
+                ETileSymbol sym;
+                if (tileSymbols.TryGetValue(colors[i], out sym))
+                {
+                    solutionTiles[i].symbol = sym;
+                }
             }
         }
 
@@ -63,7 +75,6 @@ namespace PadPuzzle
                 ETileSymbol sym;
                 if (tileSymbols.TryGetValue(tile.color, out sym))
                 {
-                    Debug.Log(tile.color + "-" + sym + " " + tile.symbol);
                     if (sym != tile.symbol) return false;
                 }
             }

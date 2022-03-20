@@ -22,6 +22,7 @@ namespace Managers
             unlockedAbilities.Add(EAbilities.BLUR);
             */
             AudioManager.Instance.Play("FullGameTheme");
+            AudioManager.Instance.Play("SFXPlayerWakeUp");
             if (instance == null)
             {
                 DontDestroyOnLoad(gameObject);

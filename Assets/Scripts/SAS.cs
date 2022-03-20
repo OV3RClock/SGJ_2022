@@ -18,6 +18,7 @@ public class SAS : MonoBehaviour
 
     private IEnumerator SASopening()
     {
+        AudioManager.Instance.Play("SFXSas");
         animator.SetTrigger("open");
         animatorRoue.SetTrigger("open");
         yield return new WaitForSeconds(10f);

@@ -15,6 +15,7 @@ public class DoorBehaviour : MonoBehaviour
         string layerName = LayerMask.LayerToName(collision.gameObject.layer);
         if (layerName == "Player")
         {
+            AudioManager.Instance.Play("SFXDoor");
             targetPos = doorStop.position;
             isActive = true;
         }
@@ -25,6 +26,7 @@ public class DoorBehaviour : MonoBehaviour
         string layerName = LayerMask.LayerToName(collision.gameObject.layer);
         if (layerName == "Player")
         {
+            AudioManager.Instance.Play("SFXDoor");
             targetPos = transform.position;
             isActive = true;
         }
@@ -32,6 +34,7 @@ public class DoorBehaviour : MonoBehaviour
 
     private void ActivateDoor()
     {
+        
         // Move our position a step closer to the target.
         float step =  speed * Time.deltaTime; // calculate distance to move
         door.position = Vector3.MoveTowards(door.position, targetPos, step);

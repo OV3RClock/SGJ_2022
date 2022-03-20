@@ -16,6 +16,7 @@ public class NorthDoorBehaviour : MonoBehaviour
         string layerName = LayerMask.LayerToName(collision.gameObject.layer);
         if (layerName == "Player")
         {
+            AudioManager.Instance.Play("SFXDoor");
             targetPos = doorStop.position;
             isActive = true;
         }
@@ -26,6 +27,7 @@ public class NorthDoorBehaviour : MonoBehaviour
         string layerName = LayerMask.LayerToName(collision.gameObject.layer);
         if (layerName == "Player")
         {
+            AudioManager.Instance.Play("SFXDoor");
             targetPos = transform.position;
             isActive = true;
         }

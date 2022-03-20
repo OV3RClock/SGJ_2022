@@ -197,7 +197,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5358255834729960932, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5358255834729960932, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -243,7 +243,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1211969944023277313, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
 --- !u!1 &114678171
 GameObject:
@@ -489,7 +490,7 @@ Transform:
   - {fileID: 1679521817}
   - {fileID: 168392085}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168392084
 GameObject:
@@ -2259,7 +2260,7 @@ Transform:
   - {fileID: 588221444}
   - {fileID: 1806939608}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &853673391
 GameObject:
@@ -2476,7 +2477,7 @@ Transform:
   - {fileID: 2142853934}
   - {fileID: 1600220443}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &983997936
 PrefabInstance:
@@ -4161,6 +4162,195 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b560911567f508748a812f1d2b8b04b5, type: 3}
+--- !u!1 &2009048834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2009048836}
+  - component: {fileID: 2009048835}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2009048835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009048834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a9578f745085f1428b4f7f203d99818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Name: MenuMusic
+    Clip: {fileID: 8300000, guid: af560fa765512df4ba60423e6869ead1, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: BaseGameTheme
+    Clip: {fileID: 8300000, guid: dc1784452ae02ce46abe4bd9d7938ee8, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: MouvementGameTheme
+    Clip: {fileID: 8300000, guid: 06df722658f92c346910a5065d974579, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: ContrastGameTheme
+    Clip: {fileID: 8300000, guid: ddb46568cae0ba045a856bc00b0ccd43, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: NightVisionGameTheme
+    Clip: {fileID: 8300000, guid: 6edc8f93ac021614ebe64a3a82319859, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: SharpnessGameTheme
+    Clip: {fileID: 8300000, guid: f50b6eabcc4510641a09acf38c642fc4, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: RedColorGameTheme
+    Clip: {fileID: 8300000, guid: 280c8dd06b6602045ac4a519d1f96c06, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: ???GameTheme
+    Clip: {fileID: 8300000, guid: c70b21678328f2645b8bf877a1456f0a, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: FullGameTheme
+    Clip: {fileID: 8300000, guid: 5759ba40601acc04898b9defc78749cf, type: 3}
+    Volume: 0.8
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
+  - Name: UIMouseHover
+    Clip: {fileID: 8300000, guid: 5759ba40601acc04898b9defc78749cf, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UIBack
+    Clip: {fileID: 8300000, guid: c74eb2c4c4438bc47910b3af1ad2e8cc, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UIConfirm
+    Clip: {fileID: 8300000, guid: 04f53b9e7f4b8814f8582a3b8ab3baf8, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: UIConfirm
+    Clip: {fileID: 8300000, guid: 04f53b9e7f4b8814f8582a3b8ab3baf8, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXInterrupteur
+    Clip: {fileID: 8300000, guid: 0bee81222a3e2e44796e500df76916f5, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXCodeSuccess
+    Clip: {fileID: 8300000, guid: 78db79e5697e9d040b1b672a5c3abc97, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXCodeFail
+    Clip: {fileID: 8300000, guid: 92f289e004215e045856aecab992788c, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXPlayerWakeUp
+    Clip: {fileID: 8300000, guid: 47972de7e2188cf4d867fe8c75889f34, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXNewPower
+    Clip: {fileID: 8300000, guid: cc5aacd9d47f25e439cdc3571ee7c8c9, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXDoor
+    Clip: {fileID: 8300000, guid: 5c0676b00308a9a478b5dfd8fe5c3ddb, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXSas
+    Clip: {fileID: 8300000, guid: 5a5c01eb8a56907498a507d4a9c4689d, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXOnModifEnter
+    Clip: {fileID: 8300000, guid: 81c28576a217414408ed996ef4ecdb6c, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXOnModifQuit
+    Clip: {fileID: 8300000, guid: d6e3e959edd94504898620b16945b539, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXToolbox
+    Clip: {fileID: 8300000, guid: d284a061c05b87f4d9d5d32f1b2087ff, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: SFXPopUp
+    Clip: {fileID: 8300000, guid: 878f909cdb53f0a4fa20dfd8ce5b2c6b, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+--- !u!4 &2009048836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009048834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8300968, y: 1.4011673, z: 0.1854214}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2030679136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1422306102231049906, guid: 4d2469164de0fdd4f993c04bdf335b74, type: 3}
@@ -4400,7 +4590,7 @@ Transform:
   - {fileID: 1855303946}
   - {fileID: 1031232130}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2118595241
 GameObject:

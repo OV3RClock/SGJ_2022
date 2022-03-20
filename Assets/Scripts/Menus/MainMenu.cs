@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private void Start()
+    {
+        AudioManager.Instance.Play("MenuMusic");
+    }
+
     public void PlayButton()
     {
+        AudioManager.Instance.Stop("MenuMusic");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

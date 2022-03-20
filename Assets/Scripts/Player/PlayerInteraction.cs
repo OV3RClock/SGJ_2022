@@ -9,17 +9,17 @@ namespace Player
         [SerializeField] private float offset = 2;
         
         private ActionObject objectToInteractWith = null;
-        private bool enabled = false;
+        private bool available = false;
 
 
         private void Start()
         {
-            TMPtext.enabled = enabled;
+            TMPtext.enabled = available;
         }
 
         private void Update()
         {
-            if (!enabled) return;
+            if (!available) return;
             
             if (Input.GetKeyDown(KeyCode.X))
             {
@@ -62,7 +62,7 @@ namespace Player
 
         private void EnableInteractionText(bool enabled)
         {
-            this.enabled = enabled;
+            this.available = enabled;
             TMPtext.enabled = enabled;
         }
     }

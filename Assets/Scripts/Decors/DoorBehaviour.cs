@@ -11,7 +11,6 @@ public class DoorBehaviour : MonoBehaviour
     [SerializeField] private bool isLocked;
     
     private Vector3 targetPos;
-    private bool isOpened = false;
     private bool isActive = false;
     
     private void OnTriggerEnter2D(Collider2D collision)

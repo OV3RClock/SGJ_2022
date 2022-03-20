@@ -4341,12 +4341,6 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: UIConfirm
-    Clip: {fileID: 8300000, guid: 04f53b9e7f4b8814f8582a3b8ab3baf8, type: 3}
-    Volume: 1
-    Pitch: 1
-    Loop: 0
-    Source: {fileID: 0}
   - Name: SFXInterrupteur
     Clip: {fileID: 8300000, guid: 0bee81222a3e2e44796e500df76916f5, type: 3}
     Volume: 1

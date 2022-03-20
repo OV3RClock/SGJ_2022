@@ -21,6 +21,7 @@ public class SAS : MonoBehaviour
         animator.SetTrigger("open");
         animatorRoue.SetTrigger("open");
         yield return new WaitForSeconds(10f);
+        AudioManager.Instance.Stop("FullGameTheme");
         SceneManager.LoadScene(0);
     }
 }

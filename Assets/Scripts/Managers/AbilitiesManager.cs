@@ -21,7 +21,7 @@ namespace Managers
             unlockedAbilities.Add(EAbilities.RED);
             unlockedAbilities.Add(EAbilities.BLUR);
             */
-
+            AudioManager.Instance.Play("FullGameTheme");
             if (instance == null)
             {
                 DontDestroyOnLoad(gameObject);

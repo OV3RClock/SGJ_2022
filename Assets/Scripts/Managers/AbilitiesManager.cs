@@ -69,6 +69,7 @@ namespace Managers
         NIGHT_VISION,
         CONTRAST,
         BLUR,
-        MOVEMENT
+        MOVEMENT,
+        ANTICIPATION
     }
 }

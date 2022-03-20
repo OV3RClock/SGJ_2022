@@ -5,7 +5,7 @@ public class DoorBehaviour : MonoBehaviour
     [SerializeField] private Transform door;
     [SerializeField] private Transform doorStop;
     [SerializeField] private float speed;
-    [SerializeField] private bool isLocked = false;
+    [SerializeField] private bool isLocked;
     
     private Vector3 targetPos;
     private bool isActive = false;
@@ -50,5 +50,10 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (isActive && !isLocked)
             ActivateDoor();
+    }
+
+    public void SetIsLocked(bool unlock)
+    {
+        isLocked = unlock;
     }
 }

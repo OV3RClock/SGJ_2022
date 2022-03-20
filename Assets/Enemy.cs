@@ -1,3 +1,4 @@
+using Managers;
 using Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +11,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform _startPos;
     [SerializeField] private float _speed = 1f;
     private Vector2 _nextPos;
-
+    [SerializeField] private SpriteRenderer sr;
     [SerializeField] private PlayerController player;
+
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -20,6 +26,17 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        //APPARENCE
+        if (AbilitiesManager.instance.IsAbilityActive(EAbilities.CONTRAST))
+        {
+            sr.enabled = true;
+        }
+        else
+        {
+            sr.enabled = false;
+        }
+
+        //POSITION
         if(transform.position == _point1.position)
         {
             _nextPos = _point2.position;
@@ -28,7 +45,6 @@ public class Enemy : MonoBehaviour
         {
             _nextPos = _point1.position;
         }
-
         transform.position = Vector3.MoveTowards(transform.position, _nextPos, _speed * Time.deltaTime);
     }
 

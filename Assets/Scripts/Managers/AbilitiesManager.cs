@@ -55,14 +55,15 @@ namespace Managers
         public void UnlockAbility(EAbilities ability)
         {
             unlockedAbilities.Add(ability);
-            try
+            abilitiesManagerEvent();
+            /*try
             {
-                abilitiesManagerEvent();
+                
             }
             catch (Exception)
             {
 
-            }
+            }*/
 
         }
 

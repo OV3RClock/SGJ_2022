@@ -66,6 +66,8 @@ namespace Player
         public void Stop(bool stop)
         {
             active = !stop;
+            if (!active)
+                rb2d.velocity = Vector2.zero;
         }
     }
 }

@@ -16,6 +16,8 @@ namespace Player
         private Vector2 moveDirection;
         private bool active = true;
 
+        public Transform RespawnPoint;
+
 
         // Update is called once per frame
         void Update()
@@ -27,6 +29,11 @@ namespace Player
         {
             if (active)
                 Move();
+        }
+
+        public void Respawn()
+        {
+            gameObject.transform.position = RespawnPoint.position;
         }
 
         void ProcessInputs()

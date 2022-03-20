@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4320177433782168093}
   - component: {fileID: 4320177433782168092}
   m_Layer: 0
-  m_Name: PowerUP
+  m_Name: PowerUPRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01495e38e84fc9845832be9652f6b233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ability: 6
+  ability: 0
 --- !u!61 &4320177433782168092
 BoxCollider2D:
   m_ObjectHideFlags: 0

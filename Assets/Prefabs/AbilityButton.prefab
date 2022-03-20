@@ -129,3 +129,4 @@ MonoBehaviour:
   abilityId: 0
   key: 0
   image: {fileID: 5886531582860708355}
+  playerInteraction: {fileID: 0}

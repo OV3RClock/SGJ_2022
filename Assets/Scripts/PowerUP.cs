@@ -7,6 +7,7 @@ public class PowerUP : MonoBehaviour
 {
     [SerializeField] private EAbilities ability;
 
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag == "Player")

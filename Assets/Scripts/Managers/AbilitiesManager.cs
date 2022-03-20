@@ -71,6 +71,11 @@ namespace Managers
             return (unlockedAbilities.Contains(ability));
         }
 
+        public bool HadAtLeastOneAbility()
+        {
+            return !(unlockedAbilities.Count == 0);
+        }
+
     }
 
     public enum EAbilities

@@ -1,3 +1,4 @@
+using Managers;
 using System;
 using UnityEngine;
 
@@ -9,18 +10,18 @@ namespace Player
         [SerializeField] private float offset = 2;
         
         private ActionObject objectToInteractWith = null;
-        private bool available = false;
+        public bool available = false;
 
 
         private void Start()
         {
-            TMPtext.enabled = available;
+            TMPtext.gameObject.SetActive(available);
         }
 
         private void Update()
         {
             if (!available) return;
-            
+
             if (Input.GetKeyDown(KeyCode.X))
             {
                 if (objectToInteractWith != null)
@@ -50,6 +51,8 @@ namespace Player
 
         public void EnterInteraction(ActionObject obj)
         {
+            if (!AbilitiesManager.instance.HadAtLeastOneAbility()) return;
+
             objectToInteractWith = obj;
             EnableInteractionText(true);
         }
@@ -63,7 +66,7 @@ namespace Player
         private void EnableInteractionText(bool enabled)
         {
             this.available = enabled;
-            TMPtext.enabled = enabled;
+            TMPtext.gameObject.SetActive(enabled);
         }
     }
 }

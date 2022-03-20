@@ -1,5 +1,6 @@
 using System;
 using Managers;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,8 @@ public class AbilityBtn : MonoBehaviour
 
     [SerializeField] private Image image;
     private bool unlocked = false;
+
+    public PlayerInteraction playerInteraction;
 
 
     private void Start()
@@ -42,6 +45,12 @@ public class AbilityBtn : MonoBehaviour
     {
         this.unlocked = unlocked;
         image.enabled = unlocked;
+    }
+
+    public void OnClick()
+    {
+        if (!unlocked) return;
+            AbilitiesManager.instance.ActivateAbility(abilityId);
     }
 
     private void SetEnabled(bool enabled)

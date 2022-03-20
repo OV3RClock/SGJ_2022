@@ -14,6 +14,6 @@ public class CollectibleAbility : ActionObject
 
     public override void CancelAction()
     {
-        enabled = false;
+        
     }
 }

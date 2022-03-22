@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 148168736088730126}
   - component: {fileID: 148168736088730127}
   - component: {fileID: 148168736088730128}
-  - component: {fileID: 148168736088730125}
+  - component: {fileID: 5414515636483632089}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -102,9 +102,10 @@ MonoBehaviour:
   _point2: {fileID: 148168737030288091}
   _startPos: {fileID: 148168736893802712}
   _speed: 5
+  sr: {fileID: 0}
   player: {fileID: 0}
---- !u!61 &148168736088730125
-BoxCollider2D:
+--- !u!70 &5414515636483632089
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -116,19 +117,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.61, y: 3.52}
-    newSize: {x: 3.61, y: 3.52}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.61, y: 3.52}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.004986286, y: 0}
+  m_Size: {x: 2.0243874, y: 2.0243874}
+  m_Direction: 0
 --- !u!1 &148168736742980923
 GameObject:
   m_ObjectHideFlags: 0

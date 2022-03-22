@@ -9,12 +9,10 @@ public class AbilityBtn : MonoBehaviour
 {
     [SerializeField] private EAbilities abilityId;
     [SerializeField] private KeyCode key;
+    [SerializeField] private KeyCode alternateKey;
 
     [SerializeField] private Image image;
     private bool unlocked = false;
-
-    public PlayerInteraction playerInteraction;
-
 
     private void Start()
     {
@@ -35,8 +33,9 @@ public class AbilityBtn : MonoBehaviour
     void Update()
     {
         if (!unlocked) return;
+        if (!AbilitiesManager.instance.OnRepareMachine) return;
         
-        if (Input.GetKeyDown(key))
+        if (Input.GetKeyDown(key) || Input.GetKeyDown(alternateKey))
         {
             AbilitiesManager.instance.ActivateAbility(abilityId);
         }
@@ -46,12 +45,6 @@ public class AbilityBtn : MonoBehaviour
     {
         this.unlocked = unlocked;
         image.enabled = unlocked;
-    }
-
-    public void OnClick()
-    {
-        if (!unlocked) return;
-        AbilitiesManager.instance.ActivateAbility(abilityId);
     }
 
     private void SetEnabled(bool enabled)

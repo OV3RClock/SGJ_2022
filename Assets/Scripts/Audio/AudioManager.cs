@@ -1,6 +1,8 @@
 using UnityEngine.Audio;
 using UnityEngine;
 using System;
+using Managers;
+using System.Collections;
 
 public class AudioManager : MonoBehaviour
 {
@@ -33,6 +35,12 @@ public class AudioManager : MonoBehaviour
             s.Source.volume = s.Volume;
             s.Source.pitch = s.Pitch;
             s.Source.loop = s.Loop;
+
+            if (s.AbilityDependant)
+            {
+                s.Source.Play();
+                s.Source.volume = 0;
+            }
         }
     }
 
@@ -59,6 +67,40 @@ public class AudioManager : MonoBehaviour
         _currentMusic = name;
     }
 
+    public void PlayMusic(EAbilities ability)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.Ability == ability);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound/ability " + ability + " not found !");
+            return;
+        }
+        StartCoroutine(StartFade(s.Source, 1, 0.8f));
+    }
+    public void StopMusic(EAbilities ability)
+    {
+        Sound s = Array.Find(Sounds, sound => sound.Ability == ability);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound/ability " + ability + " not found !");
+            return;
+        }
+        StartCoroutine(StartFade(s.Source, 1, 0));
+    }
+
+    public IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);
+            yield return null;
+        }
+        yield break;
+    }
+
     public void Pause(string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.Name == name);
@@ -74,7 +116,11 @@ public class AudioManager : MonoBehaviour
     public void Stop(string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.Name == name);
+        if(s == null)
+            Debug.LogError("Sound not found : " + name);
+        else
         s.Source.Stop();
+
         _currentMusic = null;
     }
 

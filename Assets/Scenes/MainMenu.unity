@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5358255834729960938, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
+      propertyPath: deceleration
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1211969944023277313, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f937d2db9225604cadf3e0ea42dc50a, type: 3}
@@ -743,6 +747,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244714646}
   m_CullTransparentMesh: 1
+--- !u!1 &252964916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 252964918}
+  - component: {fileID: 252964917}
+  m_Layer: 0
+  m_Name: ResetState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &252964917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252964916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7c1ae0ace384d47816353566156e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &252964918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252964916}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 428.9782, y: 263.3851, z: 7.3822165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &275545647
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,138 +4335,184 @@ MonoBehaviour:
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: BaseGameTheme
     Clip: {fileID: 8300000, guid: dc1784452ae02ce46abe4bd9d7938ee8, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: MouvementGameTheme
     Clip: {fileID: 8300000, guid: 06df722658f92c346910a5065d974579, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 4
   - Name: ContrastGameTheme
     Clip: {fileID: 8300000, guid: ddb46568cae0ba045a856bc00b0ccd43, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 2
   - Name: NightVisionGameTheme
     Clip: {fileID: 8300000, guid: 6edc8f93ac021614ebe64a3a82319859, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 1
   - Name: SharpnessGameTheme
     Clip: {fileID: 8300000, guid: f50b6eabcc4510641a09acf38c642fc4, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 3
   - Name: RedColorGameTheme
     Clip: {fileID: 8300000, guid: 280c8dd06b6602045ac4a519d1f96c06, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 0
   - Name: ???GameTheme
     Clip: {fileID: 8300000, guid: c70b21678328f2645b8bf877a1456f0a, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 1
+    Ability: 5
   - Name: FullGameTheme
     Clip: {fileID: 8300000, guid: 5759ba40601acc04898b9defc78749cf, type: 3}
     Volume: 0.8
     Pitch: 1
     Loop: 1
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: UIMouseHover
     Clip: {fileID: 8300000, guid: 5759ba40601acc04898b9defc78749cf, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: UIBack
     Clip: {fileID: 8300000, guid: c74eb2c4c4438bc47910b3af1ad2e8cc, type: 3}
     Volume: 0.6
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: UIConfirm
     Clip: {fileID: 8300000, guid: 04f53b9e7f4b8814f8582a3b8ab3baf8, type: 3}
     Volume: 0.6
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXInterrupteur
     Clip: {fileID: 8300000, guid: 0bee81222a3e2e44796e500df76916f5, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXCodeSuccess
     Clip: {fileID: 8300000, guid: 78db79e5697e9d040b1b672a5c3abc97, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXCodeFail
     Clip: {fileID: 8300000, guid: 92f289e004215e045856aecab992788c, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXPlayerWakeUp
     Clip: {fileID: 8300000, guid: 47972de7e2188cf4d867fe8c75889f34, type: 3}
     Volume: 0.6
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXNewPower
     Clip: {fileID: 8300000, guid: cc5aacd9d47f25e439cdc3571ee7c8c9, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXDoor
     Clip: {fileID: 8300000, guid: 5c0676b00308a9a478b5dfd8fe5c3ddb, type: 3}
     Volume: 0.6
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXSas
     Clip: {fileID: 8300000, guid: 5a5c01eb8a56907498a507d4a9c4689d, type: 3}
     Volume: 0.6
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXOnModifEnter
     Clip: {fileID: 8300000, guid: 81c28576a217414408ed996ef4ecdb6c, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXOnModifQuit
     Clip: {fileID: 8300000, guid: d6e3e959edd94504898620b16945b539, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXToolbox
     Clip: {fileID: 8300000, guid: d284a061c05b87f4d9d5d32f1b2087ff, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
   - Name: SFXPopUp
     Clip: {fileID: 8300000, guid: 878f909cdb53f0a4fa20dfd8ce5b2c6b, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+    AbilityDependant: 0
+    Ability: 0
 --- !u!4 &2009048836
 Transform:
   m_ObjectHideFlags: 0

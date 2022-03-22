@@ -13,15 +13,13 @@ public class SAS : MonoBehaviour
 
     public void OpenSAS()
     {
-        StartCoroutine(SASopening());
-    }
-
-    private IEnumerator SASopening()
-    {
         AudioManager.Instance.Play("SFXSas");
         animator.SetTrigger("open");
         animatorRoue.SetTrigger("open");
-        yield return new WaitForSeconds(10f);
+    }
+
+    public void EndGame()
+    {
         AudioManager.Instance.Stop("FullGameTheme");
         SceneManager.LoadScene(0);
     }

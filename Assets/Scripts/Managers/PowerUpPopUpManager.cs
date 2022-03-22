@@ -49,6 +49,8 @@ namespace Managers
         {
             popPanel.SetActive(false);
             player.Stop(false);
+            AbilitiesManager.instance.animatorRepareStation.SetTrigger("show");
+            StartCoroutine(AbilitiesManager.instance.ResetTrigger());
         }
     }
 }

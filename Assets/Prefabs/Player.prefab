@@ -213,9 +213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.3
-  deceleration: 4
+  deceleration: 6
   maxSpeed: 8
   rb2d: {fileID: 5358255834729960939}
+  RespawnPoint: {fileID: 0}
 --- !u!114 &1211969944023277313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TMPtext: {fileID: 0}
   offset: 1
+  available: 0
+  InteractKey: 0
+  AlternativeInteractKey: 0
 --- !u!70 &719668363878830389
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

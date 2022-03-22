@@ -12,6 +12,7 @@ namespace Player
         private ActionObject objectToInteractWith = null;
         public bool available = false;
 
+        [SerializeField] private KeyCode InteractKey, AlternativeInteractKey;
 
         private void Start()
         {
@@ -22,7 +23,7 @@ namespace Player
         {
             if (!available) return;
 
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(InteractKey) || Input.GetKeyDown(AlternativeInteractKey))
             {
                 if (objectToInteractWith != null)
                 {

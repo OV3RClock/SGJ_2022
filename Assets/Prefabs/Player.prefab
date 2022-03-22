@@ -232,8 +232,9 @@ MonoBehaviour:
   TMPtext: {fileID: 0}
   offset: 1
   available: 0
-  InteractKey: 0
-  AlternativeInteractKey: 0
+  InteractKey: 101
+  InteractKey2: 306
+  InteractKey3: 305
 --- !u!70 &719668363878830389
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

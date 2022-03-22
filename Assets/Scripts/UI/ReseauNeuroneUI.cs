@@ -13,7 +13,7 @@ public class ReseauNeuroneUI : MonoBehaviour
     private void Start()
     {
         SetUnlocked(AbilitiesManager.instance.IsAbilityUnlocked(abilityId));
-        image.color = Color.black / 4;
+        image.color = Color.white / 2;
     }
 
     private void OnEnable()
@@ -35,11 +35,11 @@ public class ReseauNeuroneUI : MonoBehaviour
     {
         if (enabled)
         {
-            image.color = Color.black;
+            image.color = Color.white;
         }
         else
         {
-            image.color = Color.black / 4;
+            image.color = Color.white/2;
         }
     }
 

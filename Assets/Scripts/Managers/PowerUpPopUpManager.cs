@@ -45,6 +45,13 @@ namespace Managers
             reseauUP2.SetActive(ability == EAbilities.RESEAU2);
         }
 
+        private void Update()
+        {
+            if (popPanel.activeSelf)
+                if (Input.GetKeyDown(KeyCode.KeypadEnter))
+                    ClosePopup();
+        }
+
         public void ClosePopup()
         {
             popPanel.SetActive(false);

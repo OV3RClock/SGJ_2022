@@ -53,6 +53,11 @@ namespace PadPuzzle
         {
             Sprite finalSprite = circleBlur;
             Color finalColor = Color.green;
+            if (this.color == Color.blue || this.color == new Color(255, 0, 255))
+            {
+                finalColor = Color.blue;
+            }
+            
 
             bool redActive = AbilitiesManager.instance.IsAbilityActive(EAbilities.RED);
             bool blurActive = AbilitiesManager.instance.IsAbilityActive(EAbilities.BLUR);

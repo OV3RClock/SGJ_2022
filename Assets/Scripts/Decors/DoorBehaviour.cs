@@ -110,4 +110,9 @@ public class DoorBehaviour : MonoBehaviour
 
         }
     }
+
+    public bool IsLocked()
+    {
+        return isLocked;
+    }
 }

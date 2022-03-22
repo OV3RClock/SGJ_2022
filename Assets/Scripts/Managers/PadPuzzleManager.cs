@@ -1,3 +1,4 @@
+using Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,9 @@ namespace PadPuzzle
         private void Awake()
         {
             colors.Add(Color.green);
-            colors.Add(Color.yellow);
+            colors.Add(new Color(255, 0, 255));
             colors.Add(new Color(255, 130, 0));
-            colors.Add(Color.red);
+            colors.Add(Color.blue);
             
             foreach (var color in colors)
             {
@@ -84,7 +85,11 @@ namespace PadPuzzle
 
         public void notify()
         {
-            door.SetIsLocked(!isSolved());
+            bool redUnlocked = AbilitiesManager.instance.IsAbilityUnlocked(EAbilities.RED);
+            bool blurUnlocked = AbilitiesManager.instance.IsAbilityUnlocked(EAbilities.BLUR);
+
+            if(redUnlocked && blurUnlocked && door.IsLocked())
+                door.SetIsLocked(!isSolved());
         }
     
         private void OnEnable()

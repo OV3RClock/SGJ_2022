@@ -116,11 +116,23 @@ public class AudioManager : MonoBehaviour
     public void Stop(string name)
     {
         Sound s = Array.Find(Sounds, sound => sound.Name == name);
-        if(s == null)
+        if (s == null)
             Debug.LogError("Sound not found : " + name);
         else
+            s.Source.Stop();
+
+        _currentMusic = null;
+    }
+    public void StopAllMusics()
+    {
+        Sound s = Array.Find(Sounds, sound => sound.Name == "BaseGameTheme");
         s.Source.Stop();
 
+        foreach (Sound sound in Sounds)
+        {
+            if (sound.AbilityDependant)
+                sound.Source.Stop();
+        }
         _currentMusic = null;
     }
 

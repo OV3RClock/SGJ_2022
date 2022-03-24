@@ -19,7 +19,6 @@ namespace Managers
         {
             if (instance == null)
             {
-                DontDestroyOnLoad(gameObject);
                 instance = this;
             }
             else if (instance != this)
@@ -32,6 +31,8 @@ namespace Managers
 
         public void ShowPopUp(EAbilities ability)
         {
+            AudioManager.Instance.Play("SFXPopUp");
+
             popPanel.SetActive(true);
             player.Stop(true);
 
@@ -54,6 +55,8 @@ namespace Managers
 
         public void ClosePopup()
         {
+            AudioManager.Instance.Play("UIConfirm");
+
             popPanel.SetActive(false);
             player.Stop(false);
             AbilitiesManager.instance.animatorRepareStation.SetTrigger("show");

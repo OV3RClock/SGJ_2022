@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+    - {fileID: 2800000, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+    - {fileID: 2800000, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 788124956, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: -630214508, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 252068964, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: -865583863, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 1451282942, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 543940739, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: -692879253, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: -1324721810, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 1949781969, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 707674813, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 997942198, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 1679950764, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: -55295055, guid: f2d19f7007aa8964398328f242c0236b, type: 3}
+  - {fileID: 1253755728, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+  - {fileID: -1889522623, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+  - {fileID: -1543464882, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+  - {fileID: -554914554, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+  - {fileID: -871748749, guid: f80ce6c4dbf8b68469df9a377161158d, type: 3}
+  - {fileID: -1959395582, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  - {fileID: -1540152754, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  - {fileID: -1294013302, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  - {fileID: 1054804200, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  - {fileID: 840708914, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  - {fileID: -1449788333, guid: 17b8d945871784f43b32c9e16293c13f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tilesetMurs_12
+  - tilesetMurs_10
+  - tilesetMurs_11
+  - tilesetMurs_9
+  - tilesetMurs_8
+  - tilesetMurs_3
+  - tilesetMurs_2
+  - tilesetMurs_1
+  - tilesetMurs_0
+  - tilesetMurs_7
+  - tilesetMurs_6
+  - tilesetMurs_5
+  - tilesetMurs_4
+  - Colors_2
+  - Colors_3
+  - Colors_0
+  - Colors_1
+  - Colors_4
+  - CraieRouge_2
+  - CraieRouge_3
+  - CraieRouge_0
+  - CraieRouge_1
+  - CraieRouge_4
+  - CraieRouge_5
+  m_RenderDataMap: {}
+  m_Tag: Atlas
+  m_IsVariant: 0

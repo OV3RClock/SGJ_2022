@@ -1,13 +1,13 @@
 using Managers;
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerInteraction : MonoBehaviour
     {
-        [SerializeField] private TMPro.TMP_Text TMPtext;
-        [SerializeField] private float offset = 2;
+        [SerializeField] private TextMeshProUGUI TMPtext;
         
         private ActionObject objectToInteractWith = null;
         public bool available = false;
@@ -31,11 +31,6 @@ namespace Player
                     objectToInteractWith.PerformAction();
                 }
             }
-
-            Vector2 transformPos = transform.position;
-            transformPos.y += offset;
-            Vector2 pos = Camera.main.WorldToScreenPoint(transformPos);
-            TMPtext.transform.position = pos;
         }
 
         private void OnEnable()

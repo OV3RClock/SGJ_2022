@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-
+    public bool launchCutScene;
     private void Start()
     {
         AudioManager.Instance.Play("MenuMusic");
@@ -16,7 +16,11 @@ public class MainMenu : MonoBehaviour
     {
         AudioManager.Instance.Play("UIConfirm");
         AudioManager.Instance.Stop("MenuMusic");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        if (launchCutScene)
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+            SceneManager.LoadScene(2);
     }
 
     public void QuitButton()

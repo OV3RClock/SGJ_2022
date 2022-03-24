@@ -15,6 +15,7 @@ public class DoorBehaviour : MonoBehaviour
 
     private Vector3 targetPos;
     private bool isActive = false;
+    private bool beingOpened = false;
 
     private void Start()
     {
@@ -34,7 +35,14 @@ public class DoorBehaviour : MonoBehaviour
         if (layerName == "Player")
         {
             if (!isLocked)
+            {
+                //TODO : Potentiellement enlever ce morceau de code qui declenche le son de la porte rouge
+                if(!beingOpened && UnlockWithRed)
+                    AudioManager.Instance.Play("SFXCodeSuccess");
+
+                beingOpened = true;
                 AudioManager.Instance.Play("SFXDoor");
+            }
 
             targetPos = doorStop.position;
             isActive = true;

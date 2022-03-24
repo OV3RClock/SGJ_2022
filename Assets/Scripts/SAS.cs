@@ -20,7 +20,7 @@ public class SAS : MonoBehaviour
 
     public void EndGame()
     {
-        AudioManager.Instance.Stop("FullGameTheme");
+        AudioManager.Instance.StopAllMusics();
         SceneManager.LoadScene(0);
     }
 }

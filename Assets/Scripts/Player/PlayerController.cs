@@ -7,6 +7,7 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float moveSpeed;
+        public float rotationSpeed;
         [SerializeField] private float deceleration;
         [SerializeField] private float maxSpeed;
 
@@ -17,6 +18,7 @@ namespace Player
         private bool active = true;
 
         public Transform RespawnPoint;
+
 
 
         // Update is called once per frame
@@ -68,6 +70,7 @@ namespace Player
             {
                 rb2d.AddForce(dir, ForceMode2D.Impulse);
             }
+           // graphics.rotation = Quaternion.Euler(0, 0, Mathf.Sin(Mathf.Deg2Rad * Time.time));
         }
 
         public void Stop(bool stop)

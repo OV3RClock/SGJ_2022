@@ -3,23 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartUI : MonoBehaviour
 {
-    [SerializeField] private PlayerController player;
     [SerializeField] private TextMeshProUGUI tmpText;
     [SerializeField] private string[] strings;
-
     [SerializeField] private float delay;
+    [SerializeField] private Animator animatorButton;
+    [SerializeField] private Animator animatorFade;
 
     private int currentIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        //player.Stop(true);
+        animatorFade.SetBool("show", false);
+
+        StartCoroutine(StartWrite());
+
+    }
+
+    private IEnumerator StartWrite()
+    {
+        yield return new WaitForSeconds(2);
         StartCoroutine(BlinkPoint());
     }
+
     private IEnumerator BlinkPoint()
     {
         for (int i = 0; i < 6; i++)
@@ -27,29 +37,45 @@ public class StartUI : MonoBehaviour
             if (i % 2 == 0)
                 tmpText.text += ".";
             else
-                tmpText.text = tmpText.text.Substring(0,tmpText.text.Length-1);
-            yield return new WaitForSeconds(delay*2);
+                tmpText.text = tmpText.text.Substring(0, tmpText.text.Length - 1);
+            yield return new WaitForSeconds(delay * 2);
         }
         StartCoroutine(PlayText());
     }
     private IEnumerator PlayText()
     {
-        if (strings.Length <= currentIndex) yield return null;
-
-        string story = strings[currentIndex];
-        foreach (char c in story)
+        if (strings.Length <= currentIndex)
         {
-            tmpText.text += c;
-            yield return new WaitForSeconds(delay);
+            animatorButton.SetTrigger("show");
+            yield return null;
         }
-        tmpText.text += "\n\n";
-        currentIndex++;
-        StartCoroutine(BlinkPoint());
+        else
+        {
+            string story = strings[currentIndex];
+            foreach (char c in story)
+            {
+                tmpText.text += c;
+                AudioManager.Instance.Play("UIMouseHover");
+                yield return new WaitForSeconds(delay);
+            }
+            tmpText.text += "\n\n";
+            currentIndex++;
+            StartCoroutine(BlinkPoint());
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void StartFade()
     {
-        
+        AudioManager.Instance.Play("UIConfirm");
+
+        animatorFade.SetBool("show", true);
+        StartCoroutine(StartGame());
+    }
+
+    private IEnumerator StartGame()
+    {
+        tmpText.text = "";
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(2);
     }
 }

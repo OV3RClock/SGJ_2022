@@ -22,7 +22,7 @@ namespace PadPuzzle
         
         private List<Color> colors = new List<Color>();
         private Dictionary<Color, ETileSymbol> tileSymbols = new Dictionary<Color, ETileSymbol>();
-
+        private bool solved;
         
         private void Awake()
         {
@@ -79,12 +79,15 @@ namespace PadPuzzle
                     if (sym != tile.symbol) return false;
                 }
             }
-
+            AudioManager.Instance.Play("SFXCodeSuccess");
+            solved = true;
             return true;
         }
 
         public void notify()
         {
+            if (solved) return;
+
             bool redUnlocked = AbilitiesManager.instance.IsAbilityUnlocked(EAbilities.RED);
             bool blurUnlocked = AbilitiesManager.instance.IsAbilityUnlocked(EAbilities.BLUR);
 

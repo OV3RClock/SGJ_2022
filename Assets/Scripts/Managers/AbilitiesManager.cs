@@ -27,10 +27,8 @@ namespace Managers
             unlockedAbilities.Add(EAbilities.BLUR);
             */
             AudioManager.Instance.Play("BaseGameTheme");
-            AudioManager.Instance.Play("SFXPlayerWakeUp");
             if (instance == null)
             {
-                DontDestroyOnLoad(gameObject);
                 instance = this;
             }
             else if (instance != this)
@@ -48,6 +46,7 @@ namespace Managers
         {
             if (activeAbilities.Contains(ability))
             {
+                AudioManager.Instance.Play("UIBack");
                 activeAbilities.Remove(ability);
                 abilitiesManagerEvent();
                 AudioManager.Instance.StopMusic(ability);
@@ -56,6 +55,7 @@ namespace Managers
             {
                 activeAbilities.Add(ability);
                 abilitiesManagerEvent();
+                AudioManager.Instance.Play("UIConfirm");
                 AudioManager.Instance.PlayMusic(ability);
             }
         }
@@ -72,6 +72,7 @@ namespace Managers
 
             unlockedAbilities.Add(ability);
             abilitiesManagerEvent();
+            AudioManager.Instance.Play("SFXNewPower");
         }
 
         public bool IsAbilityUnlocked(EAbilities ability)

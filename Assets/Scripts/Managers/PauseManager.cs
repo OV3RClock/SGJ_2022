@@ -21,7 +21,7 @@ public class PauseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)|| Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             pause = !pause;
             ManagePauseMenu();
@@ -30,6 +30,11 @@ public class PauseManager : MonoBehaviour
 
     private void ManagePauseMenu()
     {
+        if (pause)
+            AudioManager.Instance.Play("SFXPopUp");
+        else
+            AudioManager.Instance.Play("UIBack");
+
         pausePanel.SetActive(pause);
         player.Stop(pause);
 
@@ -48,6 +53,7 @@ public class PauseManager : MonoBehaviour
     }
     public void MainMenuButton()
     {
+        AudioManager.Instance.StopAllMusics();
         SceneManager.LoadScene(0);
     }
 }
